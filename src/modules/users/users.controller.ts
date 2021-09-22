@@ -1,6 +1,17 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, NotFoundException, UseGuards, Request } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+  NotFoundException,
+  UseGuards,
+  Request,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
-import { User, User as UserEntity } from './user.entity'
+import { User, User as UserEntity } from './user.entity';
 import { UserDto } from './dto/user.dto';
 
 @Controller('users')
@@ -26,13 +37,13 @@ export class UsersController {
     return user;
   }
 
-//   @Post()
-//   create(@Body() data: UserDto): Promise<User> {
-//         return this.userService.create(data)
-//   }
+  @Post()
+  create(@Body() data: UserDto): Promise<any> {
+    return this.userService.create(data);
+  }
 
   @Delete(':id')
-  destroy(@Param('id') id:number): Promise<User> {
-        return this.userService.destroy(id)
+  destroy(@Param('id') id: number): Promise<User> {
+    return this.userService.destroy(id);
   }
 }

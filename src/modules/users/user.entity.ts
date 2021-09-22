@@ -2,18 +2,18 @@ import { Table, Column, Model, DataType } from 'sequelize-typescript';
 import { ApiProperty } from '@nestjs/swagger';
 
 @Table
-export class User extends Model<User> {
+export class User extends Model{
     @Column({
         type: DataType.STRING,
-        allowNull: false,
+        // allowNull: false,
     })
     @ApiProperty()
     name: string;
 
     @Column({
         type: DataType.STRING,
-        unique: true,
-        allowNull: false,
+        // unique: true,
+        // allowNull: false,
     })
     @ApiProperty()
 
@@ -21,7 +21,7 @@ export class User extends Model<User> {
 
     @Column({
         type: DataType.STRING,
-        allowNull: false,
+        // allowNull: false,
     })
     @ApiProperty()
     password: string;
